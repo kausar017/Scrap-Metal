@@ -15,11 +15,42 @@ const SiteMotion = lazy(
   () => import('./components/shared/SiteMotion.jsx'),
 )
 
+const languageStorageKey = 'scrap-metal-language'
+
+function getInitialLanguageState() {
+  try {
+    const savedLanguage =
+      window.localStorage.getItem(languageStorageKey) === 'ar' ? 'ar' : 'en'
+
+    return {
+      language: 'en',
+      selectedLanguage: savedLanguage,
+      isTranslating: savedLanguage === 'ar',
+    }
+  } catch (error) {
+    console.error('Unable to read the saved website language:', error)
+    return { language: 'en', selectedLanguage: 'en', isTranslating: false }
+  }
+}
+
+function saveLanguage(language) {
+  try {
+    window.localStorage.setItem(languageStorageKey, language)
+  } catch (error) {
+    console.error('Unable to save the website language:', error)
+  }
+}
+
 export default function App() {
-  const [language, setLanguage] = useState('en')
-  const [selectedLanguage, setSelectedLanguage] = useState('en')
+  const [initialLanguageState] = useState(getInitialLanguageState)
+  const [language, setLanguage] = useState(initialLanguageState.language)
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    initialLanguageState.selectedLanguage,
+  )
   const [text, setText] = useState(siteContent)
-  const [isTranslating, setIsTranslating] = useState(false)
+  const [isTranslating, setIsTranslating] = useState(
+    initialLanguageState.isTranslating,
+  )
   const [translationError, setTranslationError] = useState('')
   const isArabic = language === 'ar'
   const location = useLocation()
@@ -34,7 +65,51 @@ export default function App() {
     window.scrollTo(0, 0)
   }, [location.pathname])
 
-  async function handleLanguageChange(event) {
+  useEffect(() => {
+    if (selectedLanguage === 'en') {
+      return
+    }
+
+    let isCurrentRequest = true
+
+    async function translateSelectedLanguage() {
+      try {
+        const translatedText = await translateContent(
+          siteContent,
+          selectedLanguage,
+        )
+
+        if (isCurrentRequest) {
+          setText(translatedText)
+          setLanguage(selectedLanguage)
+          saveLanguage(selectedLanguage)
+        }
+      } catch (error) {
+        if (isCurrentRequest) {
+          console.error('Unable to translate website content:', error)
+          setSelectedLanguage('en')
+          setLanguage('en')
+          setText(siteContent)
+          saveLanguage('en')
+          setTranslationError(
+            'Automatic translation is unavailable right now. Please try again later.',
+          )
+        }
+      } finally {
+        if (isCurrentRequest) {
+          setIsTranslating(false)
+        }
+      }
+    }
+
+    translateSelectedLanguage()
+
+    return () => {
+      isCurrentRequest = false
+    }
+  }, [selectedLanguage])
+
+  function handleLanguageChange(event) {
     const nextLanguage = event.target.value
     setSelectedLanguage(nextLanguage)
     setTranslationError('')
@@ -42,24 +117,12 @@ export default function App() {
     if (nextLanguage === 'en') {
       setLanguage('en')
       setText(siteContent)
+      setIsTranslating(false)
+      saveLanguage('en')
       return
     }
 
     setIsTranslating(true)
-
-    try {
-      const translatedText = await translateContent(siteContent, nextLanguage)
-      setText(translatedText)
-      setLanguage(nextLanguage)
-    } catch (error) {
-      console.error('Unable to translate website content:', error)
-      setSelectedLanguage(language)
-      setTranslationError(
-        'Automatic translation is unavailable right now. Please try again later.',
-      )
-    } finally {
-      setIsTranslating(false)
-    }
   }
 
   return (
