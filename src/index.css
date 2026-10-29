@@ -4,16 +4,16 @@
   themes: light --default;
 }
 
-:root {
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0;
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f7f5f1;
+  --color-base-300: #e8e5df;
+  --color-base-content: #20262b;
+  --color-primary: #c8753d;
+  --color-primary-content: #ffffff;
+  --color-neutral: #20262b;
+  --color-neutral-content: #ffffff;
 }
