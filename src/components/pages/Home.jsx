@@ -163,7 +163,7 @@ export default function Home({ text, isArabic }) {
               {text.servicesIntro}
             </p>
           </div>
-          <span className="badge badge-outline border-[#c8753d] px-4 py-4 text-[#8d4b26]">
+          <span className="badge badge-outline border-[#073b27] px-4 py-4 text-[#8d4b26]">
             {text.servicesNote}
           </span>
         </div>

@@ -63,7 +63,7 @@ export default function App() {
   }
 
   return (
-    <main className="min-h-screen min-w-[320px] bg-[#f7f5f1] font-sans text-[#20262b] antialiased selection:bg-[#c8753d] selection:text-white">
+    <main className="min-h-screen min-w-[320px] bg-[#f7f5f1] font-sans text-[#20262b] antialiased selection:bg-[#073b27] selection:text-white">
       <Suspense fallback={null}>
         <SiteMotion />
       </Suspense>
