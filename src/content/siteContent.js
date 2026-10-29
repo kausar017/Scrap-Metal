@@ -22,8 +22,9 @@ export const siteContent = {
   eyebrow: 'SCRAP METAL, SOURCED SMARTER',
   headline: 'Give valuable metal a second life.',
   intro:
-    'A straightforward way to source and sell scrap metal. Tell us what you have or what you need, and let’s make the next move.',
+    'We make it easier for businesses to source and sell scrap metal with clear, practical support at every step.',
   quote: 'Request a quote',
+  whatsapp: 'WhatsApp us',
   explore: 'Explore materials',
   heroNote: 'Practical metal recovery for modern business',
   materialsEyebrow: 'WHAT WE HANDLE',

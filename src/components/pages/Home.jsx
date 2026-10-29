@@ -50,9 +50,18 @@ export default function Home({ text, isArabic }) {
               </a>
               <a
                 className="btn btn-outline min-h-12 gap-3 border-white/55 bg-[#20262b]/20 px-5 text-sm font-bold leading-tight text-white hover:border-white hover:bg-white/10 rtl:tracking-normal"
-                href="#materials"
+                href="https://wa.me/966572033243"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {text.explore}
+                <svg
+                  aria-hidden="true"
+                  className="h-5 w-5 fill-current"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.97L2 22l5.18-1.36A9.93 9.93 0 1 0 12.04 2Zm0 18.05a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.08.81.82-3-.2-.31a8.13 8.13 0 1 1 6.89 3.81Zm4.46-6.09c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.1.15 1.52.09.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
+                </svg>
+                {text.whatsapp}
               </a>
             </div>
           </div>
