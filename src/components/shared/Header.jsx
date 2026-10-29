@@ -58,7 +58,7 @@ export default function Header({
           </select>
           {isTranslating && (
             <span
-              className="loading loading-spinner loading-sm text-primary"
+              className="loading loading-spinner loading-sm text-white"
               aria-label={text.translating}
             />
           )}
