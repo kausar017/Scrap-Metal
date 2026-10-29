@@ -10,7 +10,7 @@ const container =
   'mx-auto w-[calc(100%-48px)] max-w-[1200px] max-[760px]:w-[calc(100%-36px)] max-[760px]:max-w-[600px]'
 
 const eyebrow =
-  'mb-4 text-xs font-extrabold uppercase leading-relaxed tracking-[0.13em] text-[#a95f30] rtl:tracking-normal'
+  'mb-4 text-xs font-extrabold uppercase leading-relaxed tracking-[0.13em] text-[#073b27] rtl:tracking-normal'
 
 const heading =
   'm-0 max-w-[650px] text-[clamp(30px,3.5vw,42px)] font-bold leading-[1.17] tracking-[-0.035em] text-[#20262b] [text-wrap:balance] rtl:tracking-normal max-[760px]:text-[clamp(29px,7vw,38px)]'
@@ -39,7 +39,7 @@ export default function Home({ text, isArabic }) {
           className={`${container} relative z-10 flex min-h-[610px] flex-col justify-center py-[88px] pb-[78px] max-[760px]:min-h-[570px] max-[760px]:py-[70px] max-[760px]:pb-[82px]`}
         >
           <div className="max-w-[700px]">
-            <p className={`${eyebrow} text-[#e5a678]`}>{text.eyebrow}</p>
+            <p className={`${eyebrow} text-white`}>{text.eyebrow}</p>
             <h1 className="m-0 max-w-[690px] text-[clamp(40px,5.2vw,66px)] font-extrabold leading-[1.08] tracking-[-0.045em] text-white [text-wrap:balance] rtl:tracking-normal">
               {text.headline}
             </h1>
@@ -139,7 +139,7 @@ export default function Home({ text, isArabic }) {
                 className="rounded-[10px] border border-[#e7e3dd] bg-[#f7f5f1] p-6"
                 key={detail.title}
               >
-                <span className="mb-5 inline-block text-xs font-extrabold tracking-[0.12em] text-[#a95f30] rtl:tracking-normal">
+                <span className="mb-5 inline-block text-xs font-extrabold tracking-[0.12em] text-[#073b27] rtl:tracking-normal">
                   0{index + 1}
                 </span>
                 <h3 className="m-0 text-[20px] font-bold leading-[1.3] text-[#20262b]">
@@ -163,7 +163,7 @@ export default function Home({ text, isArabic }) {
               {text.servicesIntro}
             </p>
           </div>
-          <span className="badge badge-outline border-[#073b27] px-4 py-4 text-[#8d4b26]">
+          <span className="badge badge-outline border-[#073b27] px-4 py-4 text-[#073b27]">
             {text.servicesNote}
           </span>
         </div>
@@ -185,7 +185,7 @@ export default function Home({ text, isArabic }) {
                 }`}
                 key={step.number}
               >
-                <span className="mb-5 inline-block text-xs font-extrabold tracking-[0.12em] text-[#a95f30] max-[760px]:mb-3 rtl:tracking-normal">
+                <span className="mb-5 inline-block text-xs font-extrabold tracking-[0.12em] text-[#073b27] max-[760px]:mb-3 rtl:tracking-normal">
                   {step.number}
                 </span>
                 <h3 className="m-0 text-[21px] font-bold leading-[1.3] text-[#20262b]">
