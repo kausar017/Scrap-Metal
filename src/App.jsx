@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import About from './components/pages/About.jsx'
 import Contact from './components/pages/Contact.jsx'
@@ -10,6 +10,10 @@ import Materials from './components/pages/Materials.jsx'
 import Services from './components/pages/Services.jsx'
 import { siteContent } from './content/siteContent.js'
 import { translateContent } from './lib/translateContent.js'
+
+const SiteMotionCanvas = lazy(
+  () => import('./components/shared/SiteMotionCanvas.jsx'),
+)
 
 export default function App() {
   const [language, setLanguage] = useState('en')
@@ -60,6 +64,9 @@ export default function App() {
 
   return (
     <main className="min-h-screen min-w-[320px] bg-[#f7f5f1] font-sans text-[#20262b] antialiased selection:bg-[#c8753d] selection:text-white">
+      <Suspense fallback={null}>
+        <SiteMotionCanvas />
+      </Suspense>
       <Header
         text={text}
         isArabic={isArabic}
