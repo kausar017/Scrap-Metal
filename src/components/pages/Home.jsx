@@ -83,10 +83,7 @@ export default function Home({ text, isArabic }) {
               {text.materialsIntro}
             </p>
           </div>
-          <div
-            id="gallery"
-            className="grid grid-cols-1 gap-[22px] min-[761px]:grid-cols-2 min-[1024px]:grid-cols-3 max-[760px]:gap-4"
-          >
+          <div className="grid grid-cols-1 gap-[22px] min-[761px]:grid-cols-2 min-[1024px]:grid-cols-3 max-[760px]:gap-4">
             {text.categories.map((category, index) => (
               <article
                 className="card overflow-hidden rounded-[10px] border border-[#e7e3dd] bg-base-100"
@@ -118,6 +115,54 @@ export default function Home({ text, isArabic }) {
               </article>
             ))}
           </div>
+          <p className="mt-4 text-xs leading-5 text-[#667078]">
+            {text.materialsPhotoNote}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-white py-[88px] max-[760px]:py-16" id="why-us">
+        <div className={container}>
+          <div className="mb-[34px] max-w-[760px]">
+            <p className={eyebrow}>{text.whyEyebrow}</p>
+            <h2 className={heading}>{text.whyTitle}</h2>
+            <p className="mt-4 text-[15px] leading-[1.75] text-[#667078]">
+              {text.whyIntro}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-5 min-[761px]:grid-cols-3">
+            {text.verifiedDetails.map((detail, index) => (
+              <article
+                className="rounded-[10px] border border-[#e7e3dd] bg-[#f7f5f1] p-6"
+                key={detail.title}
+              >
+                <span className="mb-5 inline-block text-xs font-extrabold tracking-[0.12em] text-[#a95f30] rtl:tracking-normal">
+                  0{index + 1}
+                </span>
+                <h3 className="m-0 text-[20px] font-bold leading-[1.3] text-[#20262b]">
+                  {detail.title}
+                </h3>
+                <p className="mt-2.5 text-sm leading-[1.7] text-[#667078]">
+                  {detail.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7f5f1] py-[72px] max-[760px]:py-16" id="services">
+        <div className={`${container} flex items-center justify-between gap-10 max-[760px]:flex-col max-[760px]:items-start`}>
+          <div className="max-w-[760px]">
+            <p className={eyebrow}>{text.servicesEyebrow}</p>
+            <h2 className={heading}>{text.servicesTitle}</h2>
+            <p className="mt-4 text-[15px] leading-[1.75] text-[#667078]">
+              {text.servicesIntro}
+            </p>
+          </div>
+          <span className="badge badge-outline border-[#c8753d] px-4 py-4 text-[#8d4b26]">
+            {text.servicesNote}
+          </span>
         </div>
       </section>
 
@@ -127,7 +172,7 @@ export default function Home({ text, isArabic }) {
             <p className={eyebrow}>{text.processEyebrow}</p>
             <h2 className={heading}>{text.processTitle}</h2>
           </div>
-          <div className="grid grid-cols-1 border-t border-[#dcd9d3] min-[761px]:grid-cols-3">
+          <div className="grid grid-cols-1 border-t border-[#dcd9d3] min-[761px]:grid-cols-2 min-[1024px]:grid-cols-4">
             {text.steps.map((step, index) => (
               <article
                 className={`min-h-[190px] py-6 max-[760px]:min-h-0 max-[760px]:py-[22px] ${
@@ -152,19 +197,50 @@ export default function Home({ text, isArabic }) {
         </div>
       </section>
 
-      <section className="bg-[#20262b] py-[78px] text-white max-[760px]:py-[60px]" id="about">
-        <div
-          className={`${container} grid grid-cols-[1fr_1.15fr] items-start gap-x-[70px] max-[760px]:block`}
-        >
-          <p className={`${eyebrow} col-start-1 mb-3.5 text-[#e5a678]`}>
-            {text.aboutLabel}
+      <section className="bg-[#f7f5f1] py-[88px] max-[760px]:py-16" id="gallery">
+        <div className={container}>
+          <p className={eyebrow}>{text.galleryEyebrow}</p>
+          <h2 className={heading}>{text.galleryTitle}</h2>
+          <p className="mt-4 max-w-[700px] text-[15px] leading-[1.75] text-[#667078]">
+            {text.galleryIntro}
           </p>
-          <h2 className={`${heading} col-start-1 text-white`}>
-            {text.aboutTitle}
-          </h2>
-          <p className="col-start-2 row-span-2 row-start-1 mt-[29px] max-w-[530px] text-base leading-[1.8] text-white/75 max-[760px]:mt-[18px] max-[760px]:text-[15px]">
-            {text.aboutText}
+          <div className="mt-8 flex min-h-48 items-center justify-center rounded-[10px] border border-dashed border-[#c9c4bb] bg-white p-8 text-center">
+            <p className="m-0 max-w-[520px] text-sm leading-[1.7] text-[#667078]">
+              {text.galleryNote}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-[72px] max-[760px]:py-16" id="service-area">
+        <div className={container}>
+          <p className={eyebrow}>{text.areaEyebrow}</p>
+          <h2 className={heading}>{text.areaTitle}</h2>
+          <p className="mt-4 max-w-[700px] text-[15px] leading-[1.75] text-[#667078]">
+            {text.areaIntro}
           </p>
+        </div>
+      </section>
+
+      <section className="bg-[#f7f5f1] py-[88px] max-[760px]:py-16" id="faq">
+        <div className={container}>
+          <p className={eyebrow}>{text.faqEyebrow}</p>
+          <h2 className={heading}>{text.faqTitle}</h2>
+          <div className="mt-8 grid gap-3">
+            {text.faqs.map((faq) => (
+              <details
+                className="collapse collapse-arrow rounded-lg border border-[#e7e3dd] bg-white"
+                key={faq.question}
+              >
+                <summary className="collapse-title min-h-14 pe-12 text-base font-semibold text-[#20262b]">
+                  {faq.question}
+                </summary>
+                <div className="collapse-content text-sm leading-[1.7] text-[#667078]">
+                  <p>{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -173,19 +249,21 @@ export default function Home({ text, isArabic }) {
           className={`${container} flex items-center justify-between gap-10 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-6`}
         >
           <div>
-            <p className={eyebrow}>{text.contactEyebrow}</p>
-            <h2 className={heading}>{text.contactTitle}</h2>
+            <p className={eyebrow}>{text.finalEyebrow}</p>
+            <h2 className={heading}>{text.finalTitle}</h2>
             <p className="mt-3.5 max-w-[570px] text-[15px] leading-[1.7] text-[#535e65]">
-              {text.contactText}
+              {text.finalText}
             </p>
           </div>
-          <a
-            className={`${primaryButton} shrink-0`}
-            href="mailto:hello@resource.example"
-          >
-            {text.contactButton}
-            <ArrowIcon left={isArabic} />
-          </a>
+          <div className="flex shrink-0 flex-wrap gap-3">
+            <a className={primaryButton} href="https://wa.me/966572033243" target="_blank" rel="noopener noreferrer">
+              {text.quoteRequest}
+              <ArrowIcon left={isArabic} />
+            </a>
+            <a className="btn btn-outline border-[#20262b] text-[#20262b] hover:bg-[#20262b] hover:text-white" href="https://wa.me/966572033243" target="_blank" rel="noopener noreferrer">
+              {text.whatsapp}
+            </a>
+          </div>
         </div>
       </section>
     </>
