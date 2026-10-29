@@ -1,9 +1,4 @@
-import { lazy, Suspense } from 'react'
 import ArrowIcon from '../shared/ArrowIcon.jsx'
-
-const HeroScrapAnimation = lazy(
-  () => import('../shared/HeroScrapAnimation.jsx'),
-)
 
 const materialImages = [
   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80',
@@ -37,9 +32,6 @@ export default function Home({ text, isArabic }) {
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#141a1e]/90 via-[#141a1e]/75 to-[#141a1e]/35 max-[760px]:via-[#141a1e]/70 max-[760px]:to-[#141a1e]/55" />
-        <Suspense fallback={null}>
-          <HeroScrapAnimation />
-        </Suspense>
         <div
           className={`${container} relative z-10 flex min-h-[610px] flex-col justify-center py-[88px] pb-[78px] max-[760px]:min-h-[570px] max-[760px]:py-[70px] max-[760px]:pb-[82px]`}
         >
