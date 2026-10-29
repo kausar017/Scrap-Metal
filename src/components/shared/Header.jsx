@@ -15,7 +15,7 @@ export default function Header({
     <header className="relative z-30 border-b border-[#14533a] bg-[#073b27] text-white">
       <div className="bg-[#052819]">
         <div className="mx-auto flex min-h-8 w-[calc(100%-48px)] max-w-[1200px] items-center text-[11px] font-medium tracking-wide text-white/75 max-[760px]:w-[calc(100%-36px)] max-[760px]:max-w-[600px]">
-          <span className="me-2 h-1.5 w-1.5 rounded-full bg-[#d3a94f]" />
+          <span className="me-2 h-1.5 w-1.5 rounded-full bg-white" />
           {text.heroNote}
         </div>
       </div>
@@ -37,7 +37,7 @@ export default function Header({
         >
           {text.nav.map((item) => (
             <Link
-              className="text-sm font-semibold text-white/85 transition-colors duration-150 hover:text-[#e3bf6b] rtl:tracking-normal"
+              className="text-sm font-semibold text-white/85 transition-colors duration-150 hover:text-white rtl:tracking-normal"
               to={item.href}
               key={item.href}
             >
@@ -63,14 +63,14 @@ export default function Header({
             />
           )}
           <Link
-            className="btn btn-sm min-h-[44px] gap-3 rounded-none border-[#d3a94f] bg-[#d3a94f] px-4 text-sm font-extrabold leading-tight text-[#17271e] hover:border-[#e2bd6d] hover:bg-[#e2bd6d] rtl:tracking-normal max-[760px]:hidden"
+            className="btn btn-sm min-h-[44px] gap-3 rounded-none border-white bg-white px-4 text-sm font-extrabold leading-tight text-[#073b27] hover:border-white/90 hover:bg-white/90 rtl:tracking-normal max-[760px]:hidden"
             to="/contact"
           >
             {text.quote}
             <ArrowIcon left={isArabic} className="h-4 w-4 shrink-0" />
           </Link>
           <button
-            className="btn btn-square min-h-[42px] min-w-[42px] rounded-none border-white/35 bg-transparent text-white hover:border-[#d3a94f] hover:bg-white/10 max-[760px]:inline-flex min-[761px]:hidden"
+            className="btn btn-square min-h-[42px] min-w-[42px] rounded-none border-white/35 bg-transparent text-white hover:border-white hover:bg-white/10 max-[760px]:inline-flex min-[761px]:hidden"
             type="button"
             aria-label={text.navLabel}
             aria-expanded={isMenuOpen}
@@ -114,7 +114,7 @@ export default function Header({
           <div className="mx-auto flex w-full max-w-[600px] flex-col">
             {text.nav.map((item) => (
               <Link
-                className="border-b border-white/15 py-3.5 text-sm font-semibold text-white/85 transition-colors hover:text-[#e3bf6b] rtl:tracking-normal"
+                className="border-b border-white/15 py-3.5 text-sm font-semibold text-white/85 transition-colors hover:text-white rtl:tracking-normal"
                 to={item.href}
                 key={item.href}
                 onClick={() => setIsMenuOpen(false)}
@@ -123,7 +123,7 @@ export default function Header({
               </Link>
             ))}
             <Link
-              className="btn mt-4 min-h-[44px] gap-3 rounded-none border-[#d3a94f] bg-[#d3a94f] text-sm font-extrabold text-[#17271e] hover:border-[#e2bd6d] hover:bg-[#e2bd6d] rtl:tracking-normal"
+              className="btn mt-4 min-h-[44px] gap-3 rounded-none border-white bg-white text-sm font-extrabold text-[#073b27] hover:border-white/90 hover:bg-white/90 rtl:tracking-normal"
               to="/contact"
               onClick={() => setIsMenuOpen(false)}
             >

@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  background: #073b27;
+  background: #fff;
 }
 
 .site-loader__logo {
@@ -45,14 +45,14 @@
   width: min(180px, 42vw);
   height: 2px;
   overflow: hidden;
-  background: rgb(255 255 255 / 28%);
+  background: #e8e5df;
 }
 
 .site-loader__progress {
   display: block;
   width: 100%;
   height: 100%;
-  background: #d3a94f;
+  background: #073b27;
   transform: scaleX(0);
   transform-origin: left center;
 }

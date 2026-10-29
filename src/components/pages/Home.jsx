@@ -18,6 +18,9 @@ const heading =
 const primaryButton =
   'btn btn-primary min-h-12 gap-3 rounded-md border-transparent px-5 text-sm font-bold leading-tight rtl:tracking-normal'
 
+const heroButton =
+  'btn min-h-12 gap-3 rounded-md border-white bg-white px-5 text-sm font-bold leading-tight text-[#073b27] hover:border-white/90 hover:bg-white/90 rtl:tracking-normal'
+
 export default function Home({ text, isArabic }) {
   return (
     <>
@@ -44,7 +47,7 @@ export default function Home({ text, isArabic }) {
               {text.intro}
             </p>
             <div className="mt-[30px] flex flex-wrap gap-3">
-              <a className={primaryButton} href="#contact">
+              <a className={heroButton} href="#contact">
                 {text.quote}
                 <ArrowIcon left={isArabic} />
               </a>
@@ -66,7 +69,7 @@ export default function Home({ text, isArabic }) {
             </div>
           </div>
           <div className="absolute inset-x-0 bottom-[30px] flex items-center gap-2.5 text-xs text-white/80 max-[760px]:bottom-6 max-[760px]:text-[11px]">
-            <span className="h-px w-[26px] bg-[#c8753d]" />
+            <span className="h-px w-[26px] bg-[#073b27]" />
             <span>{text.heroNote}</span>
           </div>
         </div>
