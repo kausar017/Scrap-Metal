@@ -27,7 +27,7 @@ export default function Home({ text, isArabic }) {
       >
         <img
           className="absolute inset-0 h-full w-full object-cover object-[center_52%] max-[760px]:object-[58%_center]"
-          src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=2200&q=85"
+          src="https://images.unsplash.com/photo-1785900976828-9d67c8b24134?auto=format&fit=crop&w=2200&q=85"
           alt=""
           fetchPriority="high"
         />
