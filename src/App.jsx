@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import About from './components/pages/About.jsx'
+import Contact from './components/pages/Contact.jsx'
+import Gallery from './components/pages/Gallery.jsx'
 import Footer from './components/shared/Footer.jsx'
 import Header from './components/shared/Header.jsx'
 import Home from './components/pages/Home.jsx'
+import Materials from './components/pages/Materials.jsx'
+import Services from './components/pages/Services.jsx'
 import { siteContent } from './content/siteContent.js'
 import { translateContent } from './lib/translateContent.js'
 
@@ -12,12 +18,17 @@ export default function App() {
   const [isTranslating, setIsTranslating] = useState(false)
   const [translationError, setTranslationError] = useState('')
   const isArabic = language === 'ar'
+  const location = useLocation()
 
   useEffect(() => {
     document.documentElement.classList.add('scroll-smooth')
     document.documentElement.lang = language
     document.documentElement.dir = isArabic ? 'rtl' : 'ltr'
   }, [isArabic, language])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   async function handleLanguageChange(event) {
     const nextLanguage = event.target.value
@@ -64,7 +75,15 @@ export default function App() {
           <span>{translationError}</span>
         </div>
       )}
-      <Home text={text} isArabic={isArabic} />
+      <Routes>
+        <Route path="/" element={<Home text={text} isArabic={isArabic} />} />
+        <Route path="/materials" element={<Materials text={text} />} />
+        <Route path="/services" element={<Services text={text} />} />
+        <Route path="/about" element={<About text={text} />} />
+        <Route path="/gallery" element={<Gallery text={text} />} />
+        <Route path="/contact" element={<Contact text={text} />} />
+        <Route path="*" element={<Home text={text} isArabic={isArabic} />} />
+      </Routes>
       <Footer text={text} />
     </main>
   )
