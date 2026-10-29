@@ -157,7 +157,7 @@ export default function SiteMotion() {
       role="status"
       aria-label="Loading website"
     >
-      <img className="site-loader__logo" src="/Logo.png" alt="" />
+      <img className="site-loader__logo" src="/logo.png" alt="" />
       <span className="site-loader__track" aria-hidden="true">
         <span className="site-loader__progress" />
       </span>

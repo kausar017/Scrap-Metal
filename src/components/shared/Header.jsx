@@ -27,7 +27,7 @@ export default function Header({
         >
           <img
             className="block h-auto w-[124px] max-[380px]:w-[110px]"
-            src="/Logo.png"
+            src="/logo.png"
             alt={text.brand}
           />
         </Link>

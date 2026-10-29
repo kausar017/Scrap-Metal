@@ -12,7 +12,7 @@ export default function Footer({ text }) {
             >
               <img
                 className="block h-[58px] w-[104px] object-contain"
-                src="/Logo.png"
+                src="/logo.png"
                 alt={text.brand}
               />
             </Link>
