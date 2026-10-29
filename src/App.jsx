@@ -11,8 +11,8 @@ import Services from './components/pages/Services.jsx'
 import { siteContent } from './content/siteContent.js'
 import { translateContent } from './lib/translateContent.js'
 
-const SiteMotionCanvas = lazy(
-  () => import('./components/shared/SiteMotionCanvas.jsx'),
+const SiteMotion = lazy(
+  () => import('./components/shared/SiteMotion.jsx'),
 )
 
 export default function App() {
@@ -65,7 +65,7 @@ export default function App() {
   return (
     <main className="min-h-screen min-w-[320px] bg-[#f7f5f1] font-sans text-[#20262b] antialiased selection:bg-[#c8753d] selection:text-white">
       <Suspense fallback={null}>
-        <SiteMotionCanvas />
+        <SiteMotion />
       </Suspense>
       <Header
         text={text}
